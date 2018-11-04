@@ -27,3 +27,4 @@ def recv_keywords(text):
         else:
             return "Build is in progress"
 
+    return "I could not understand what I should do for you."
