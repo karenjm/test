@@ -18,6 +18,7 @@ def unknown_url():
 @app.route('/keywords/<text>', methods=['GET', 'POST'])
 def recv_keywords(text):
 
+    text = text.lower()
     if 'trident' in text or 'build' in text:
         actions.start_trident_build()
         return "Build Started"
