@@ -10,6 +10,11 @@ def index():
     return "Hello, I'm DevOps Anywhere"
 
 
+@app.errorhandler(404)
+def unknown_url():
+    return "Sorry, I could not understand what I should do for you."
+
+
 @app.route('/keywords/<text>', methods=['GET', 'POST'])
 def recv_keywords(text):
 
@@ -27,4 +32,4 @@ def recv_keywords(text):
         else:
             return "Build is in progress"
 
-    return "I could not understand what I should do for you."
+    return "Sorry, I could not understand what I should do for you."
