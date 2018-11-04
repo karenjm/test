@@ -5,4 +5,5 @@ COPY pip-packages.txt views.py actions.py ./
 
 RUN pip install --no-cache-dir -r pip-packages.txt
 
-ENTRYPOINT ["flask run"]
+CMD ["flask", "run"
+ENTRYPOINT ["flask", "run"]
