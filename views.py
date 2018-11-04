@@ -21,5 +21,9 @@ def recv_keywords(text):
         if actions.has_build_in_queue():
             return "Build is pending"
         number, url = actions.get_trident_last_build()
-        return "Build is " + actions.get_trident_build_result(number)
+        result = actions.get_trident_build_result(number)
+        if result:
+            return "Build Complete with {}".format(result)
+        else:
+            return "Build is in progress"
 
